@@ -3,14 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	// var conferenceName = "Go conference"
+
 	conferenceName := "Go conference"
 	const conferenceTickets = 50
 	var remainingTickets uint = 40
-
-	// fmt.Println("Welcome to", conferenceName, "Hello World")
-	// fmt.Println("We have a total of", conferenceTickets, "tickets and", remainingTickets, "are still available.")
-	// fmt.Println("Get yout tickets here to attend.")
 
 	fmt.Printf("conferenceTickets is %T, remainingTickets is %T, conferenceName is %T\n", conferenceTickets, remainingTickets, conferenceName)
 
@@ -18,13 +14,38 @@ func main() {
 	fmt.Printf("We have a total of %v tickets and %v are still available.\n", conferenceTickets, remainingTickets)
 	fmt.Printf("Get your tickets here to attend.\n")
 
-	var userName string
-	var userTickets int
-	//  ask user for their name
-	fmt.Scan()
+	var firstName string
+	var lastName string
+	var email string
+	var userTickets uint
 
-	userName = "Isaac"
-	userTickets = 2
-	fmt.Printf("User %v booked %v tickets.\n", userName, userTickets)
+	// var userName string
+	// fmt.Scan(&userName)
+
+	// Examplle outputs
+	// fmt.Println(remainingTickets)
+	// fmt.Println(&remainingTickets)
+	// userName = "Isaac"
+	// userTickets = 2
+
+	//  ask user for their info
+	fmt.Println("Enter your first name:")
+	fmt.Scan(&firstName)
+
+	fmt.Println("Enter your last name:")
+	fmt.Scan(&lastName)
+
+	fmt.Println("Enter your email address:")
+	fmt.Scan(&email)
+
+	fmt.Println("Enter number of tickets:")
+	fmt.Scan(&userTickets)
+
+	// fmt.Printf("User %v booked %v tickets.\n", firstName, userTickets)
+
+	remainingTickets = remainingTickets - userTickets
+
+	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
+	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
 }
